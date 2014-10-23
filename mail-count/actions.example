@@ -1,0 +1,28 @@
+# Rename or copy this file to "actions" and configure.
+
+# Mail count for an interval exceeds a threshold:
+
+#if [ "$INTERVAL_CNT" -gt "10" ]; then
+#	Do something
+#fi
+
+# Today's mail count exceeds a threshold:
+
+#if [ "$TODAY_CNT" -gt "100" ]; then
+#	Do something
+#fi
+
+# First run on a new day ($NEWDAY=1):
+
+#if [ "$NEWDAY" -eq "1" ]; then
+#	Do something
+#fi
+
+# Send yesterday's results by mail on first run of a new day.
+
+#if [ "$NEWDAY" -eq "1" ]; then
+#	TOTAL=$(tail -n1 ${STATFILE}-${LASTRUN})
+#	HOST=$(hostname)
+#	DAY=$(date -d yesterday '+%b %d %Y')
+#	mail -s "$HOST sent $TOTAL emails on $DAY" admin@example.net < ${STATFILE}-${LASTRUN}
+#fi
