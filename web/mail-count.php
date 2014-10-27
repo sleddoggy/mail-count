@@ -153,10 +153,8 @@ if (empty($maildata)) {
 		}
 		foreach ($lines as $line) {
 			list($stamp, $ttl) = explode(' ', $line);
-
 			list($dnum,$mnum,$year) = explode('-', $stamp);
-			$dispstamp = $months[$mnum] . ' ' . $dnum . ', ' . $year;
-
+			$dispstamp = date("D, M j", mktime('0','1','0',$mnum,$dnum,$year));
 			$previous_days .= "<tr><td><a href='?day=$stamp'>$dispstamp</a></td><td>$ttl</td></tr>\n";
 		}
 		$previous_days .= '</table>';
